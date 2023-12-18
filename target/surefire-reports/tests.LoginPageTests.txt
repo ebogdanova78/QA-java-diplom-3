@@ -1,0 +1,182 @@
+-------------------------------------------------------------------------------
+Test set: tests.LoginPageTests
+-------------------------------------------------------------------------------
+Tests run: 12, Failures: 0, Errors: 11, Skipped: 0, Time elapsed: 41.181 s <<< FAILURE! - in tests.LoginPageTests
+loginWithForgotPageTest[0](tests.LoginPageTests)  Time elapsed: 4.404 s  <<< ERROR!
+org.openqa.selenium.SessionNotCreatedException: 
+session not created: This version of ChromeDriver only supports Chrome version 114
+Current browser version is 120.0.6099.110 with binary path C:\Program Files (x86)\Google\Chrome\Application\chrome.exe
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'EBOGDANOVA-L', ip: '10.101.164.59', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.14'
+Driver info: driver.version: ChromeDriver
+remote stacktrace: Backtrace:
+	GetHandleVerifier [0x007BA813+48355]
+	(No symbol) [0x0074C4B1]
+	(No symbol) [0x00655358]
+	(No symbol) [0x006761AC]
+	(No symbol) [0x00671EF3]
+	(No symbol) [0x00670579]
+	(No symbol) [0x006A0C55]
+	(No symbol) [0x006A093C]
+	(No symbol) [0x0069A536]
+	(No symbol) [0x006782DC]
+	(No symbol) [0x006793DD]
+	GetHandleVerifier [0x00A1AABD+2539405]
+	GetHandleVerifier [0x00A5A78F+2800735]
+	GetHandleVerifier [0x00A5456C+2775612]
+	GetHandleVerifier [0x008451E0+616112]
+	(No symbol) [0x00755F8C]
+	(No symbol) [0x00752328]
+	(No symbol) [0x0075240B]
+	(No symbol) [0x00744FF7]
+	BaseThreadInitThunk [0x761600C9+25]
+	RtlGetAppContainerNamedObjectPath [0x772E7B4E+286]
+	RtlGetAppContainerNamedObjectPath [0x772E7B1E+238]
+
+	at tests.LoginPageTests.setUp(LoginPageTests.java:48)
+
+loginWithForgotPageTest[0](tests.LoginPageTests)  Time elapsed: 4.406 s  <<< ERROR!
+java.lang.NullPointerException
+	at tests.LoginPageTests.teardown(LoginPageTests.java:123)
+
+loginWithRegistrationPageTest[0](tests.LoginPageTests)  Time elapsed: 2.992 s  <<< ERROR!
+org.openqa.selenium.SessionNotCreatedException: 
+session not created: This version of ChromeDriver only supports Chrome version 114
+Current browser version is 120.0.6099.110 with binary path C:\Program Files (x86)\Google\Chrome\Application\chrome.exe
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'EBOGDANOVA-L', ip: '10.101.164.59', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.14'
+Driver info: driver.version: ChromeDriver
+remote stacktrace: Backtrace:
+	GetHandleVerifier [0x007BA813+48355]
+	(No symbol) [0x0074C4B1]
+	(No symbol) [0x00655358]
+	(No symbol) [0x006761AC]
+	(No symbol) [0x00671EF3]
+	(No symbol) [0x00670579]
+	(No symbol) [0x006A0C55]
+	(No symbol) [0x006A093C]
+	(No symbol) [0x0069A536]
+	(No symbol) [0x006782DC]
+	(No symbol) [0x006793DD]
+	GetHandleVerifier [0x00A1AABD+2539405]
+	GetHandleVerifier [0x00A5A78F+2800735]
+	GetHandleVerifier [0x00A5456C+2775612]
+	GetHandleVerifier [0x008451E0+616112]
+	(No symbol) [0x00755F8C]
+	(No symbol) [0x00752328]
+	(No symbol) [0x0075240B]
+	(No symbol) [0x00744FF7]
+	BaseThreadInitThunk [0x761600C9+25]
+	RtlGetAppContainerNamedObjectPath [0x772E7B4E+286]
+	RtlGetAppContainerNamedObjectPath [0x772E7B1E+238]
+
+	at tests.LoginPageTests.setUp(LoginPageTests.java:48)
+
+loginWithRegistrationPageTest[0](tests.LoginPageTests)  Time elapsed: 2.992 s  <<< ERROR!
+java.lang.NullPointerException
+	at tests.LoginPageTests.teardown(LoginPageTests.java:123)
+
+loginWithMainPagePersonAccountTest[0](tests.LoginPageTests)  Time elapsed: 3.103 s  <<< ERROR!
+org.openqa.selenium.SessionNotCreatedException: 
+session not created: This version of ChromeDriver only supports Chrome version 114
+Current browser version is 120.0.6099.110 with binary path C:\Program Files (x86)\Google\Chrome\Application\chrome.exe
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'EBOGDANOVA-L', ip: '10.101.164.59', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.14'
+Driver info: driver.version: ChromeDriver
+remote stacktrace: Backtrace:
+	GetHandleVerifier [0x007BA813+48355]
+	(No symbol) [0x0074C4B1]
+	(No symbol) [0x00655358]
+	(No symbol) [0x006761AC]
+	(No symbol) [0x00671EF3]
+	(No symbol) [0x00670579]
+	(No symbol) [0x006A0C55]
+	(No symbol) [0x006A093C]
+	(No symbol) [0x0069A536]
+	(No symbol) [0x006782DC]
+	(No symbol) [0x006793DD]
+	GetHandleVerifier [0x00A1AABD+2539405]
+	GetHandleVerifier [0x00A5A78F+2800735]
+	GetHandleVerifier [0x00A5456C+2775612]
+	GetHandleVerifier [0x008451E0+616112]
+	(No symbol) [0x00755F8C]
+	(No symbol) [0x00752328]
+	(No symbol) [0x0075240B]
+	(No symbol) [0x00744FF7]
+	BaseThreadInitThunk [0x761600C9+25]
+	RtlGetAppContainerNamedObjectPath [0x772E7B4E+286]
+	RtlGetAppContainerNamedObjectPath [0x772E7B1E+238]
+
+	at tests.LoginPageTests.setUp(LoginPageTests.java:48)
+
+loginWithMainPagePersonAccountTest[0](tests.LoginPageTests)  Time elapsed: 3.103 s  <<< ERROR!
+java.lang.NullPointerException
+	at tests.LoginPageTests.teardown(LoginPageTests.java:123)
+
+loginWithMainPageTest[0](tests.LoginPageTests)  Time elapsed: 2.197 s  <<< ERROR!
+org.openqa.selenium.SessionNotCreatedException: 
+session not created: This version of ChromeDriver only supports Chrome version 114
+Current browser version is 120.0.6099.110 with binary path C:\Program Files (x86)\Google\Chrome\Application\chrome.exe
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'EBOGDANOVA-L', ip: '10.101.164.59', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.14'
+Driver info: driver.version: ChromeDriver
+remote stacktrace: Backtrace:
+	GetHandleVerifier [0x007BA813+48355]
+	(No symbol) [0x0074C4B1]
+	(No symbol) [0x00655358]
+	(No symbol) [0x006761AC]
+	(No symbol) [0x00671EF3]
+	(No symbol) [0x00670579]
+	(No symbol) [0x006A0C55]
+	(No symbol) [0x006A093C]
+	(No symbol) [0x0069A536]
+	(No symbol) [0x006782DC]
+	(No symbol) [0x006793DD]
+	GetHandleVerifier [0x00A1AABD+2539405]
+	GetHandleVerifier [0x00A5A78F+2800735]
+	GetHandleVerifier [0x00A5456C+2775612]
+	GetHandleVerifier [0x008451E0+616112]
+	(No symbol) [0x00755F8C]
+	(No symbol) [0x00752328]
+	(No symbol) [0x0075240B]
+	(No symbol) [0x00744FF7]
+	BaseThreadInitThunk [0x761600C9+25]
+	RtlGetAppContainerNamedObjectPath [0x772E7B4E+286]
+	RtlGetAppContainerNamedObjectPath [0x772E7B1E+238]
+
+	at tests.LoginPageTests.setUp(LoginPageTests.java:48)
+
+loginWithMainPageTest[0](tests.LoginPageTests)  Time elapsed: 2.197 s  <<< ERROR!
+java.lang.NullPointerException
+	at tests.LoginPageTests.teardown(LoginPageTests.java:123)
+
+loginWithRegistrationPageTest[1](tests.LoginPageTests)  Time elapsed: 6.299 s  <<< ERROR!
+org.openqa.selenium.ElementClickInterceptedException: 
+Element <a class="Auth_link__1fOlj" href="/login"> is not clickable at point (741,646) because another element <div class="Modal_modal_overlay__x2ZCr"> obscures it
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'EBOGDANOVA-L', ip: '10.101.164.59', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.14'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 120.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20231129155202, moz:geckodriverVersion: 0.33.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 37312, moz:profile: C:\Users\EBOGDA~1.OPE\AppDa..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 1c99d4d0-9d98-43ae-8601-742d303e7dcd
+	at tests.LoginPageTests.loginWithRegistrationPageTest(LoginPageTests.java:99)
+
+loginWithMainPagePersonAccountTest[1](tests.LoginPageTests)  Time elapsed: 6.822 s  <<< ERROR!
+org.openqa.selenium.ElementClickInterceptedException: 
+Element <a class="AppHeader_header__link__3D_hX" href="/account"> is not clickable at point (1168,44) because another element <div class="Modal_modal_overlay__x2ZCr"> obscures it
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'EBOGDANOVA-L', ip: '10.101.164.59', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.14'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 120.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20231129155202, moz:geckodriverVersion: 0.33.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 41224, moz:profile: C:\Users\EBOGDA~1.OPE\AppDa..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: cb776cb1-7430-4f49-8f7f-4c521a91d53a
+	at tests.LoginPageTests.loginWithMainPagePersonAccountTest(LoginPageTests.java:84)
+
+loginWithMainPageTest[1](tests.LoginPageTests)  Time elapsed: 7.014 s  <<< ERROR!
+org.openqa.selenium.ElementClickInterceptedException: 
+Element <button class="button_button__33qZ0 button_button_type_primary__1O7Bx button_button_size_large__G21Vg"> is not clickable at point (1144,440) because another element <div class="Modal_modal_overlay__x2ZCr"> obscures it
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'EBOGDANOVA-L', ip: '10.101.164.59', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.14'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 120.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20231129155202, moz:geckodriverVersion: 0.33.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 2308, moz:profile: C:\Users\EBOGDA~1.OPE\AppDa..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: ef80751b-2446-4c3f-9ce8-47db78560e99
+	at tests.LoginPageTests.loginWithMainPageTest(LoginPageTests.java:70)
+

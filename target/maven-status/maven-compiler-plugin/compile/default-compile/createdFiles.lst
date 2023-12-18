@@ -1,0 +1,6 @@
+page_object\PersonalAccountPage.class
+constants\Constants.class
+page_object\ForgotPasswordPage.class
+page_object\LoginPage.class
+page_object\MainPage.class
+page_object\RegistrationPage.class

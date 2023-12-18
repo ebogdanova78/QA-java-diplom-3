@@ -1,0 +1,4 @@
+tests\MainPageTests.class
+tests\PersonalAccountPageTests.class
+tests\LoginPageTests.class
+tests\RegistrationPageTests.class

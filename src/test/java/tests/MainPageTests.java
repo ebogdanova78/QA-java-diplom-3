@@ -16,6 +16,7 @@ import page_object.MainPage;
 
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.concurrent.TimeUnit;
 
 import static constants.Constants.MAINPAGE;
 
@@ -43,6 +44,7 @@ public class MainPageTests {
         } else if (browser.equals("firefox")) {
             WebDriverManager.firefoxdriver().setup();
             driver = new FirefoxDriver();
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         }
 
         driver.get(MAINPAGE);
@@ -54,23 +56,29 @@ public class MainPageTests {
     @DisplayName("Секция Булки")
     @Description("Выбор раздела Булки и проверка активности заголовока")
     public void chooseBunSection () {
+        mainPage.chooseFillings(); // без этого не выбрать раздел Булки, так он стоит по умолчанию
         mainPage.checkActive("Булки");
+        mainPage.chooseBuns()
+                .checkBunsVisible();
+
     }
 
     @Test
     @DisplayName("Раздел Начинки")
     @Description("Выбир раздела Начинки и проверка активности заголовока")
     public void chooseFillingsSection () {
-        mainPage.chooseFillings()
-                .checkActive("Начинки");
+          mainPage.checkActive("Начинки");
+          mainPage.chooseFillings()
+                  .checkFillingsVisible();
     }
 
     @Test
     @DisplayName("Раздел Соусы")
     @Description("Выбир раздела Соусы и проверка активности заголовока")
     public void chooseSaucesSection () {
-        mainPage.chooseSauces()
-                .checkActive("Соусы");
+             mainPage.checkActive("Соусы");
+             mainPage.chooseSauces()
+                     .checkSaucesVisible();
     }
 
     @After

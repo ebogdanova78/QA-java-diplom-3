@@ -16,6 +16,7 @@ import page_object.RegistrationPage;
 
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.concurrent.TimeUnit;
 
 import static constants.Constants.*;
 import static org.hamcrest.CoreMatchers.is;
@@ -49,6 +50,7 @@ public class RegistrationPageTests {
         } else if (browser.equals("firefox")) {
             WebDriverManager.firefoxdriver().setup();
             driver = new FirefoxDriver();
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         }
 
         driver.get(REGISTRATIONPAGE);

@@ -18,6 +18,8 @@ import page_object.RegistrationPage;
 import org.junit.runner.RunWith;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.concurrent.TimeUnit;
+
 import static constants.Constants.*;
 
 @RunWith(Parameterized.class)
@@ -49,6 +51,7 @@ public class LoginPageTests {
         } else if (browser.equals("firefox")) {
             WebDriverManager.firefoxdriver().setup();
             driver = new FirefoxDriver();
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         }
 
         driver.get(REGISTRATIONPAGE);

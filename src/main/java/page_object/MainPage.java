@@ -3,6 +3,7 @@ package page_object;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -55,10 +56,11 @@ public class MainPage {
     @Step("Выбор раздела Начинки")
     public MainPage chooseFillings() {
         WebDriverWait wait = new WebDriverWait(driver, 30);
-        wait.until(ExpectedConditions.elementToBeClickable(fillingsButton));
+        wait.until(ExpectedConditions.elementToBeClickable(saucesButton));
         driver.findElement(fillingsButton).click();
         return this;
     }
+
 
     @Step("Проверка активности выбранной секции")
     public boolean checkActive(String section) {
@@ -86,6 +88,24 @@ public class MainPage {
         wait.until(ExpectedConditions.elementToBeClickable(personalAccount));
         driver.findElement(personalAccount).click();
         return new LoginPage();
+    }
+
+
+    @Step("Проверка видимости заголовка Булки")
+    public boolean checkBunsVisible() {
+        return driver.findElement(buns).isDisplayed();
+    }
+
+
+    @Step("Проверка видимости заголовка Булки")
+    public boolean checkSaucesVisible() {
+        return driver.findElement(sauces).isDisplayed();
+    }
+
+
+    @Step("Проверка видимости заголовка Начинка")
+    public boolean checkFillingsVisible() {
+        return driver.findElement(fillings).isDisplayed();
     }
 
     @Step("Кнопка Личный кабинет на главной странице с авторизацией")

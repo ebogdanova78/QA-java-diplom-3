@@ -14,6 +14,8 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import page_object.*;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.concurrent.TimeUnit;
+
 import static constants.Constants.*;
 
 @RunWith(Parameterized.class)
@@ -42,6 +44,7 @@ public class PersonalAccountPageTests  {
         } else if (browser.equals("firefox")) {
             WebDriverManager.firefoxdriver().setup();
             driver = new FirefoxDriver();
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         }
 
         driver.get(MAINPAGE);

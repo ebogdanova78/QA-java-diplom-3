@@ -7,10 +7,13 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import page_object.MainPage;
 
 
@@ -56,6 +59,8 @@ public class MainPageTests {
     @DisplayName("Секция Булки")
     @Description("Выбор раздела Булки и проверка активности заголовока")
     public void chooseBunSection () {
+        WebDriverWait wait = new WebDriverWait(driver, 20);
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("div.Modal_modal_overlay__x2ZCr")));
         mainPage.chooseFillings(); // без этого не выбрать раздел Булки, так он стоит по умолчанию
         mainPage.checkActive("Булки");
         mainPage.chooseBuns()
@@ -65,11 +70,11 @@ public class MainPageTests {
 
     @Test
     @DisplayName("Раздел Начинки")
-    @Description("Выбир раздела Начинки и проверка активности заголовока")
+    @Description("Выбор раздела Начинки и проверка активности заголовока")
     public void chooseFillingsSection () {
           mainPage.checkActive("Начинки");
           mainPage.chooseFillings()
-                  .checkFillingsVisible();
+                   .checkFillingsVisible();
     }
 
     @Test

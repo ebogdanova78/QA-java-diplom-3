@@ -51,7 +51,7 @@ public class LoginPageTests {
         } else if (browser.equals("firefox")) {
             WebDriverManager.firefoxdriver().setup();
             driver = new FirefoxDriver();
-            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         }
 
         driver.get(REGISTRATIONPAGE);
@@ -70,10 +70,12 @@ public class LoginPageTests {
         driver.get(MAINPAGE);
         mainPage = new MainPage(this.driver);
         loginPage = new LoginPage(this.driver);
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         mainPage.pressLogin()
                 .enterEmail(USER_EMAIL)
-                .enterPassword(USER_PASSWORD)
-                .pressButtonLogin()
+                .enterPassword(USER_PASSWORD);
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+                loginPage.pressButtonLogin()
                 .checkButtonOrder();
     }
 
@@ -84,10 +86,12 @@ public class LoginPageTests {
         driver.get(MAINPAGE);
         mainPage = new MainPage(this.driver);
         loginPage = new LoginPage(this.driver);
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         mainPage.buttonPersonalAccount()
                 .enterEmail(USER_EMAIL)
-                .enterPassword(USER_PASSWORD)
-                .pressButtonLogin()
+                .enterPassword(USER_PASSWORD);
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+                loginPage.pressButtonLogin()
                 .checkButtonOrder();
     }
 
@@ -99,10 +103,12 @@ public class LoginPageTests {
         registrationPage = new RegistrationPage(this.driver);
         mainPage = new MainPage(this.driver);
         loginPage = new LoginPage(this.driver);
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         registrationPage.buttonLogin()
                 .enterEmail(USER_EMAIL)
-                .enterPassword(USER_PASSWORD)
-                .pressButtonLogin()
+                .enterPassword(USER_PASSWORD);
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+                loginPage.pressButtonLogin()
                 .checkButtonOrder();
     }
 
@@ -114,10 +120,12 @@ public class LoginPageTests {
         forgotPasswordPage = new ForgotPasswordPage(this.driver);
         mainPage = new MainPage(this.driver);
         loginPage = new LoginPage(this.driver);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         forgotPasswordPage.buttonLogin()
                 .enterEmail(USER_EMAIL)
-                .enterPassword(USER_PASSWORD)
-                .pressButtonLogin()
+                .enterPassword(USER_PASSWORD);
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+                loginPage.pressButtonLogin()
                 .checkButtonOrder();
     }
 

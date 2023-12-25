@@ -2,6 +2,7 @@ package page_object;
 
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -90,22 +91,27 @@ public class MainPage {
         return new LoginPage();
     }
 
-
     @Step("Проверка видимости заголовка Булки")
     public boolean checkBunsVisible() {
-        return driver.findElement(buns).isDisplayed();
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+        WebElement fillingsElement = driver.findElement(buns);
+        return isDisplayedInViewport(fillingsElement);
     }
 
 
-    @Step("Проверка видимости заголовка Булки")
+    @Step("Проверка видимости заголовка Соусы")
     public boolean checkSaucesVisible() {
-        return driver.findElement(sauces).isDisplayed();
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+        WebElement fillingsElement = driver.findElement(sauces);
+        return isDisplayedInViewport(fillingsElement);
     }
 
 
     @Step("Проверка видимости заголовка Начинка")
     public boolean checkFillingsVisible() {
-        return driver.findElement(fillings).isDisplayed();
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+        WebElement fillingsElement = driver.findElement(fillings);
+        return isDisplayedInViewport(fillingsElement);
     }
 
     @Step("Кнопка Личный кабинет на главной странице с авторизацией")
@@ -115,4 +121,11 @@ public class MainPage {
         driver.findElement(personalAccount).click();
         return new PersonalAccountPage();
     }
+
+    public boolean isDisplayedInViewport(WebElement element) {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        Number windowHeight = (Number) js.executeScript("return window.innerHeight");
+        Number elementPosition = (Number) js.executeScript("return arguments[0].getBoundingClientRect().top", element);
+        return element.isDisplayed() && elementPosition.doubleValue() >= 0 && elementPosition.doubleValue() < windowHeight.doubleValue();
+        }
 }

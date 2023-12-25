@@ -61,6 +61,7 @@ public class PersonalAccountPageTests  {
     @Description("Проверка открытия личного кабинета и доступности кнопки Выхода")
     public void personalAccountTest() {
           PersonalAccountPage personalAccountPage = new PersonalAccountPage(this.driver);
+          driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
           mainPage.buttonPersonalAccountWithAuth();
           personalAccountPage.checkButtonExit();
     }
@@ -70,6 +71,7 @@ public class PersonalAccountPageTests  {
     @Description("Проверка перехода на главную страницу после нажатия на кнопку Конструктор")
     public void openMainPageButtonConstructorTest() {
         PersonalAccountPage personalAccountPage = new PersonalAccountPage(this.driver);
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         mainPage.buttonPersonalAccountWithAuth()
                 .buttonConstructor()
                 .checkLogoVisible();
@@ -80,6 +82,7 @@ public class PersonalAccountPageTests  {
     @Description("Проверка переход на главную страницу после нажатия на кнопку логотипа")
     public void openMainPageButtonLogoTest() {
         PersonalAccountPage personalAccountPage = new PersonalAccountPage(this.driver);
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         mainPage.buttonPersonalAccountWithAuth()
                 .logo()
                 .checkLogoVisible();
@@ -90,6 +93,7 @@ public class PersonalAccountPageTests  {
     @Description("Проверка переход на страницу Логина после нажатия на кнопку Выхода")
     public void openLoginPageButtonExitTest() {
         PersonalAccountPage personalAccountPage = new PersonalAccountPage(this.driver);
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         mainPage.buttonPersonalAccountWithAuth()
                 .buttonExit()
                 .checkVisibleLogin();

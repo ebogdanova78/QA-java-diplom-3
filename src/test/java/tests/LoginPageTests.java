@@ -7,9 +7,11 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runners.Parameterized;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import page_object.ForgotPasswordPage;
 import page_object.LoginPage;
@@ -21,6 +23,7 @@ import java.util.Collection;
 import java.util.concurrent.TimeUnit;
 
 import static constants.Constants.*;
+
 
 @RunWith(Parameterized.class)
 public class LoginPageTests {
@@ -71,11 +74,12 @@ public class LoginPageTests {
         mainPage = new MainPage(this.driver);
         loginPage = new LoginPage(this.driver);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        new WebDriverWait(driver, 5).until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//*[@id='root']/div/main/section[1]/div[2]/ul[1]/a[1]/img")));
         mainPage.pressLogin()
                 .enterEmail(USER_EMAIL)
                 .enterPassword(USER_PASSWORD);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-                loginPage.pressButtonLogin()
+        loginPage.pressButtonLogin()
                 .checkButtonOrder();
     }
 
@@ -86,12 +90,11 @@ public class LoginPageTests {
         driver.get(MAINPAGE);
         mainPage = new MainPage(this.driver);
         loginPage = new LoginPage(this.driver);
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        new WebDriverWait(driver, 5).until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//*[@id='root']/div/main/section[1]/div[2]/ul[1]/a[1]/img")));
         mainPage.buttonPersonalAccount()
                 .enterEmail(USER_EMAIL)
-                .enterPassword(USER_PASSWORD);
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-                loginPage.pressButtonLogin()
+                .enterPassword(USER_PASSWORD)
+                 .pressButtonLogin()
                 .checkButtonOrder();
     }
 
@@ -106,9 +109,8 @@ public class LoginPageTests {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         registrationPage.buttonLogin()
                 .enterEmail(USER_EMAIL)
-                .enterPassword(USER_PASSWORD);
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-                loginPage.pressButtonLogin()
+                .enterPassword(USER_PASSWORD)
+                 .pressButtonLogin()
                 .checkButtonOrder();
     }
 
@@ -123,9 +125,8 @@ public class LoginPageTests {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         forgotPasswordPage.buttonLogin()
                 .enterEmail(USER_EMAIL)
-                .enterPassword(USER_PASSWORD);
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-                loginPage.pressButtonLogin()
+                .enterPassword(USER_PASSWORD)
+                .pressButtonLogin()
                 .checkButtonOrder();
     }
 

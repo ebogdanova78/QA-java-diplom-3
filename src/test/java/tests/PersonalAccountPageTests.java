@@ -8,9 +8,12 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import page_object.*;
 import java.util.Arrays;
 import java.util.Collection;
@@ -62,6 +65,7 @@ public class PersonalAccountPageTests  {
     public void personalAccountTest() {
           PersonalAccountPage personalAccountPage = new PersonalAccountPage(this.driver);
           driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        new WebDriverWait(driver, 5).until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//*[@id='root']/div/main/section[1]/div[2]/ul[1]/a[1]/img")));
           mainPage.buttonPersonalAccountWithAuth();
           personalAccountPage.checkButtonExit();
     }
@@ -70,10 +74,12 @@ public class PersonalAccountPageTests  {
     @DisplayName("Переход по кнопке Конструктор")
     @Description("Проверка перехода на главную страницу после нажатия на кнопку Конструктор")
     public void openMainPageButtonConstructorTest() {
+        driver.get(MAINPAGE);
         PersonalAccountPage personalAccountPage = new PersonalAccountPage(this.driver);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        mainPage.buttonPersonalAccountWithAuth()
-                .buttonConstructor()
+        new WebDriverWait(driver, 5).until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//*[@id='root']/div/main/section[1]/div[2]/ul[1]/a[1]/img")));
+        mainPage.buttonPersonalAccountWithAuth();
+                personalAccountPage.buttonConstructor()
                 .checkLogoVisible();
     }
 
@@ -83,6 +89,7 @@ public class PersonalAccountPageTests  {
     public void openMainPageButtonLogoTest() {
         PersonalAccountPage personalAccountPage = new PersonalAccountPage(this.driver);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        new WebDriverWait(driver, 5).until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//*[@id='root']/div/main/section[1]/div[2]/ul[1]/a[1]/img")));
         mainPage.buttonPersonalAccountWithAuth()
                 .logo()
                 .checkLogoVisible();
@@ -94,6 +101,7 @@ public class PersonalAccountPageTests  {
     public void openLoginPageButtonExitTest() {
         PersonalAccountPage personalAccountPage = new PersonalAccountPage(this.driver);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        new WebDriverWait(driver, 5).until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//*[@id='root']/div/main/section[1]/div[2]/ul[1]/a[1]/img")));
         mainPage.buttonPersonalAccountWithAuth()
                 .buttonExit()
                 .checkVisibleLogin();

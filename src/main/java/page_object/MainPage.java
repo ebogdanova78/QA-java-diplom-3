@@ -1,31 +1,23 @@
 package page_object;
 
 import io.qameta.allure.Step;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class MainPage {
-
     private static WebDriver driver;
-
-    By Title = By.xpath("//h1[contains(@class, 'text_type_main-large')]");
+    By title = By.xpath("//h1[contains(@class, 'text_type_main-large')]");
     By bunsButton = By.xpath(".//div/span[text()='Булки']");
     By saucesButton = By.xpath(".//div/span[text()='Соусы']");
     By fillingsButton = By.xpath(".//div/span[text()='Начинки']");
     By activeSection = By.className("tab_tab_type_current__2BEPc");
     By buns = By.xpath("//h2[.='Булки']");
-    By sauces = By.xpath("//h2[.='Соусы']");
+    By sauces = By.xpath("//*[@id='root']/div/main/section[1]/div[2]/ul[2]/a[4]/img");
     By fillings = By.xpath("//h2[.='Начинки']");
     public static By personalAccount = By.linkText("Личный Кабинет");
-
     By login = By.xpath("//*[.='Войти в аккаунт']");
-
     By buttonOrder = By.xpath("//*[.='Оформить заказ']");
-
     public MainPage(WebDriver driver) {
         this.driver = driver;
     }
@@ -35,7 +27,7 @@ public class MainPage {
 
     @Step("Проверка на видимость заголовка Соберите бургер")
     public boolean checkLogoVisible() {
-        return driver.findElement(Title).isDisplayed();
+        return driver.findElement(title).isDisplayed();
     }
 
     @Step("Выбор раздела Булки")
@@ -93,25 +85,23 @@ public class MainPage {
 
     @Step("Проверка видимости заголовка Булки")
     public boolean checkBunsVisible() {
-        WebDriverWait wait = new WebDriverWait(driver, 30);
         WebElement fillingsElement = driver.findElement(buns);
-        return isDisplayedInViewport(fillingsElement);
+        return fillingsElement.isDisplayed() && isDisplayedInViewport(fillingsElement);
     }
 
 
     @Step("Проверка видимости заголовка Соусы")
     public boolean checkSaucesVisible() {
-        WebDriverWait wait = new WebDriverWait(driver, 30);
         WebElement fillingsElement = driver.findElement(sauces);
-        return isDisplayedInViewport(fillingsElement);
+        return fillingsElement.isDisplayed() && isDisplayedInViewport(fillingsElement);
     }
 
 
     @Step("Проверка видимости заголовка Начинка")
     public boolean checkFillingsVisible() {
-        WebDriverWait wait = new WebDriverWait(driver, 30);
         WebElement fillingsElement = driver.findElement(fillings);
-        return isDisplayedInViewport(fillingsElement);
+        return fillingsElement.isDisplayed() && isDisplayedInViewport(fillingsElement);
+
     }
 
     @Step("Кнопка Личный кабинет на главной странице с авторизацией")
@@ -122,10 +112,13 @@ public class MainPage {
         return new PersonalAccountPage();
     }
 
-    public boolean isDisplayedInViewport(WebElement element) {
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        Number windowHeight = (Number) js.executeScript("return window.innerHeight");
-        Number elementPosition = (Number) js.executeScript("return arguments[0].getBoundingClientRect().top", element);
-        return element.isDisplayed() && elementPosition.doubleValue() >= 0 && elementPosition.doubleValue() < windowHeight.doubleValue();
+    public boolean isDisplayedInViewport (WebElement element) {
+            JavascriptExecutor js = (JavascriptExecutor) driver;
+            Number windowHeight = (Number) js.executeScript("return window.innerHeight");
+            Number elementTop = (Number) js.executeScript("return arguments[0].getBoundingClientRect().top", element);
+            Number elementBottom = (Number) js.executeScript("return arguments[0].getBoundingClientRect().bottom", element);
+            System.out.println(element.isDisplayed() && elementTop.doubleValue() >= 0 && elementBottom.doubleValue() <= windowHeight.doubleValue());
+            return element.isDisplayed() && elementTop.doubleValue() >= 0 && elementBottom.doubleValue() <= windowHeight.doubleValue();
+
         }
 }

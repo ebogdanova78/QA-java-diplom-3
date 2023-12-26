@@ -11,12 +11,10 @@ public class ForgotPasswordPage {
     private static WebDriver driver;
     private final By buttonLogin = By.linkText("Войти");
 
-    public ForgotPasswordPage() {
-    }
-
     public ForgotPasswordPage (WebDriver driver) {
         this.driver = driver;
     }
+
     @Step("Кнопка Войти на странице восстановления пароля")
     public LoginPage buttonLogin() {
         WebDriverWait wait = new WebDriverWait(driver, 30);
@@ -25,5 +23,4 @@ public class ForgotPasswordPage {
         driver.findElement(buttonLogin).click();
         return new LoginPage();
     }
-
 }

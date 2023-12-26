@@ -3,6 +3,7 @@ package tests;
 import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -63,8 +64,9 @@ public class MainPageTests {
         wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("div.Modal_modal_overlay__x2ZCr")));
         mainPage.chooseFillings(); // без этого не выбрать раздел Булки, так он стоит по умолчанию
         mainPage.checkActive("Булки");
-        mainPage.chooseBuns()
-                .checkBunsVisible();
+        mainPage.chooseBuns();
+        boolean isVisible = mainPage.checkBunsVisible();
+        Assert.assertTrue(isVisible);
 
     }
 
@@ -72,18 +74,20 @@ public class MainPageTests {
     @DisplayName("Раздел Начинки")
     @Description("Выбор раздела Начинки и проверка активности заголовока")
     public void chooseFillingsSection () {
-          mainPage.checkActive("Начинки");
-          mainPage.chooseFillings()
-                   .checkFillingsVisible();
+        mainPage.checkActive("Начинки");
+        mainPage.chooseFillings();
+        boolean isVisible = mainPage.checkFillingsVisible();
+        Assert.assertTrue(isVisible);
     }
 
     @Test
     @DisplayName("Раздел Соусы")
     @Description("Выбир раздела Соусы и проверка активности заголовока")
     public void chooseSaucesSection () {
-             mainPage.checkActive("Соусы");
-             mainPage.chooseSauces()
-                     .checkSaucesVisible();
+         mainPage.checkActive("Соусы");
+         mainPage.chooseSauces();
+         boolean isVisible = mainPage.checkSaucesVisible();
+         Assert.assertTrue(isVisible);
     }
 
     @After

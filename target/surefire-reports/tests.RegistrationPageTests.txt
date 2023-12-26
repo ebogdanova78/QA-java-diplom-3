@@ -1,0 +1,78 @@
+-------------------------------------------------------------------------------
+Test set: tests.RegistrationPageTests
+-------------------------------------------------------------------------------
+Tests run: 6, Failures: 0, Errors: 4, Skipped: 0, Time elapsed: 20.851 s <<< FAILURE! - in tests.RegistrationPageTests
+registrationUserTest[0](tests.RegistrationPageTests)  Time elapsed: 3.247 s  <<< ERROR!
+org.openqa.selenium.SessionNotCreatedException: 
+session not created: This version of ChromeDriver only supports Chrome version 114
+Current browser version is 120.0.6099.110 with binary path C:\Program Files (x86)\Google\Chrome\Application\chrome.exe
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'EBOGDANOVA-L', ip: '10.101.164.59', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.14'
+Driver info: driver.version: ChromeDriver
+remote stacktrace: Backtrace:
+	GetHandleVerifier [0x007BA813+48355]
+	(No symbol) [0x0074C4B1]
+	(No symbol) [0x00655358]
+	(No symbol) [0x006761AC]
+	(No symbol) [0x00671EF3]
+	(No symbol) [0x00670579]
+	(No symbol) [0x006A0C55]
+	(No symbol) [0x006A093C]
+	(No symbol) [0x0069A536]
+	(No symbol) [0x006782DC]
+	(No symbol) [0x006793DD]
+	GetHandleVerifier [0x00A1AABD+2539405]
+	GetHandleVerifier [0x00A5A78F+2800735]
+	GetHandleVerifier [0x00A5456C+2775612]
+	GetHandleVerifier [0x008451E0+616112]
+	(No symbol) [0x00755F8C]
+	(No symbol) [0x00752328]
+	(No symbol) [0x0075240B]
+	(No symbol) [0x00744FF7]
+	BaseThreadInitThunk [0x761600C9+25]
+	RtlGetAppContainerNamedObjectPath [0x772E7B4E+286]
+	RtlGetAppContainerNamedObjectPath [0x772E7B1E+238]
+
+	at tests.RegistrationPageTests.setUp(RegistrationPageTests.java:48)
+
+registrationUserTest[0](tests.RegistrationPageTests)  Time elapsed: 3.247 s  <<< ERROR!
+java.lang.NullPointerException
+	at tests.RegistrationPageTests.teardown(RegistrationPageTests.java:86)
+
+registrationUserWithIncorrectPasswordTest[0](tests.RegistrationPageTests)  Time elapsed: 2.997 s  <<< ERROR!
+org.openqa.selenium.SessionNotCreatedException: 
+session not created: This version of ChromeDriver only supports Chrome version 114
+Current browser version is 120.0.6099.110 with binary path C:\Program Files (x86)\Google\Chrome\Application\chrome.exe
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'EBOGDANOVA-L', ip: '10.101.164.59', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.14'
+Driver info: driver.version: ChromeDriver
+remote stacktrace: Backtrace:
+	GetHandleVerifier [0x007BA813+48355]
+	(No symbol) [0x0074C4B1]
+	(No symbol) [0x00655358]
+	(No symbol) [0x006761AC]
+	(No symbol) [0x00671EF3]
+	(No symbol) [0x00670579]
+	(No symbol) [0x006A0C55]
+	(No symbol) [0x006A093C]
+	(No symbol) [0x0069A536]
+	(No symbol) [0x006782DC]
+	(No symbol) [0x006793DD]
+	GetHandleVerifier [0x00A1AABD+2539405]
+	GetHandleVerifier [0x00A5A78F+2800735]
+	GetHandleVerifier [0x00A5456C+2775612]
+	GetHandleVerifier [0x008451E0+616112]
+	(No symbol) [0x00755F8C]
+	(No symbol) [0x00752328]
+	(No symbol) [0x0075240B]
+	(No symbol) [0x00744FF7]
+	BaseThreadInitThunk [0x761600C9+25]
+	RtlGetAppContainerNamedObjectPath [0x772E7B4E+286]
+	RtlGetAppContainerNamedObjectPath [0x772E7B1E+238]
+
+	at tests.RegistrationPageTests.setUp(RegistrationPageTests.java:48)
+
+registrationUserWithIncorrectPasswordTest[0](tests.RegistrationPageTests)  Time elapsed: 2.998 s  <<< ERROR!
+java.lang.NullPointerException
+	at tests.RegistrationPageTests.teardown(RegistrationPageTests.java:86)
+
